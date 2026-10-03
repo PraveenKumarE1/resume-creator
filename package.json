@@ -1,0 +1,19 @@
+{
+  "name": "portify-ai",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace apps/server & npm run dev --workspace apps/web",
+    "build": "npm run build --workspace packages/shared && npm run build --workspace apps/server && npm run build --workspace apps/web",
+    "build:shared": "npm run build --workspace packages/shared",
+    "build:server": "npm run build --workspace apps/server",
+    "build:web": "npm run build --workspace apps/web",
+    "typecheck": "npm run typecheck --workspace apps/server && npm run typecheck --workspace apps/web"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
